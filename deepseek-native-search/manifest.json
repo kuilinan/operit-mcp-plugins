@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "toolpkg_id": "com.operit.deepseek_native_search",
+  "version": "0.2.0",
+  "author": "芸",
+  "license": "MIT",
+  "homepage": "https://github.com/kuilinan/operit-mcp-plugins",
+  "main": "dist/main.js",
+  "display_name": {
+    "zh": "DeepSeek 原生搜索",
+    "en": "DeepSeek Native Search",
+    "default": "DeepSeek Native Search"
+  },
+  "description": {
+    "zh": "调用 DeepSeek 官方全新独立搜索接口（`/v1/tools/search`），**按次计费，不消耗模型 Token**。返回结构化来源（含权威度分级 authority / 相关度得分 rerank_score / 站点名与发布日期）。**需自备 Key**：优先读 Operit 环境变量 `DEEPSEEK_API_KEY`，其次读 `/root/.deepseek_native_search_key`。未配置时返回明确错误与接入指引，不伪造结果。",
+    "en": "Call DeepSeek's official standalone Search API (`/v1/tools/search`): **billed per call, no model tokens consumed**. Returns structured sources with authority tier, rerank score, site name and publish date. **Bring your own key**: Operit env var `DEEPSEEK_API_KEY` first, then `/root/.deepseek_native_search_key`. Without a key the tool returns a clear error with setup instructions — it never fabricates results.",
+    "default": "DeepSeek official standalone Search API (/v1/tools/search). Billed per call, no model tokens consumed. Returns structured sources with authority tier. Bring your own DEEPSEEK_API_KEY."
+  },
+  "enabled_by_default": true,
+  "subpackages": [
+    {
+      "id": "deepseek_native_search",
+      "entry": "dist/packages/deepseek_native_search.js",
+      "enabled_by_default": true,
+      "display_name": {
+        "zh": "DeepSeek 原生搜索",
+        "en": "DeepSeek Native Search",
+        "default": "DeepSeek Native Search"
+      },
+      "description": {
+        "zh": "调用 DeepSeek 官方独立搜索接口（/v1/tools/search），按次计费，不消耗模型 Token。返回结构化来源（支持权威度分级）。需自备 Key（DEEPSEEK_API_KEY）。",
+        "en": "DeepSeek official standalone Search API (/v1/tools/search). Billed per call, no model tokens consumed. Returns structured sources with authority tiers. Bring your own DEEPSEEK_API_KEY."
+      }
+    }
+  ],
+  "resources": [],
+  "workflow_templates": [],
+  "workspace_templates": []
+}
